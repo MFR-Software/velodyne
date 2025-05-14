@@ -4,7 +4,7 @@ SHELL ["/bin/bash", "-c"]
 
 COPY ./src /ros2_ws/src
 WORKDIR /ros2_ws
-RUN rosdep update && rosdep install --from-paths src --ignore-src -y
+RUN apt update && rosdep update && rosdep install --from-paths src --ignore-src -y
 RUN source /opt/ros/humble/setup.bash &&\
     colcon build
 
